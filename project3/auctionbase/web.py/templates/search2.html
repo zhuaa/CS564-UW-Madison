@@ -1,0 +1,24 @@
+{% extends "app_base.html" %}
+{% block content %}
+<h3> Search </h3> 
+
+<ul>
+{% if search_result %}
+{% for result in search_result %}
+{% for key in result %}
+<div>
+  <span>{{ key|e }}</span>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <span>{{ result[key]|e }}</span>
+  </div>
+{% endfor %}
+<div>--------</div>
+{% endfor %}
+{% else %}
+<div>No results</div>
+{% endif %}
+</ul>
+
+
+
+{% endblock %}
